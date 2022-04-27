@@ -1,5 +1,5 @@
 # GOOGLE_API_BASIC
-Python Quickstart
+Python Quickstart makes requests to the Drive API.
 > https://developers.google.com/drive/api/quickstart/python
 
 To install the Google client library for Python, run the following command:
