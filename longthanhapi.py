@@ -80,14 +80,16 @@ class driveapi:
                 ID.append(command_create_folder.get('id'))
         return ID
 
-    def upload_image(self, path, service, name_image_format, id_folder_parents):
+    def upload_image(self, service, name_image_format, path, id_parents): # upload for har and ppe. Just change id parrent folder. 
         file_metadata = {'name': name_image_format,
-                        'parents': [str(id_folder_parents[0])]
+                        'parents': [str(id_parents)]
                         }
         media = MediaFileUpload(path, mimetype='image/jpeg')
-        file = service.files().create(body=file_metadata, media_body=media, fields='id').execute()
-        print('{} | UPLOADED :) IMAGE ID {}'.format(log_time, file.get('id')))
-        ID =  file.get('id')
+        file = service.files().create(body=file_metadata,
+                                    media_body=media,
+                                    fields='id').execute()
+        print('image id {}'.format(file.get('id')))
+        ID = file.get('id')
         return ID
 
     def token_access_get(self):
