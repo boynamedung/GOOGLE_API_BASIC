@@ -80,7 +80,7 @@ class driveapi:
                 ID.append(command_create_folder.get('id'))
         return ID
 
-    def upload_image(self, service, name_image_format, path, id_parents): # upload for har and ppe. Just change id parrent folder. 
+    def upload_image(self, service, name_image_format, path, id_parents): 
         file_metadata = {'name': name_image_format,
                         'parents': [str(id_parents)]
                         }
